@@ -1,5 +1,27 @@
+import java.util.*;
+
 public class Mergesort{
 	private int[] aux;
+
+	public static void main(String[] args){
+		Scanner scan = new Scanner(System.in);
+		// int[] a = {3,2,4,1,5,7,6,8,10,9};
+		int n = scan.nextInt();
+		int[] a = new int[n];
+		for(int i = 0; i < n; i++)
+			a[i] = scan.nextInt();
+
+		Mergesort mysort = new Mergesort();
+
+		System.out.println("Original: ");
+		for(int i: a)
+			System.out.print(i +" ");
+		System.out.println("\nSorted: ");
+		mysort.sort(a);
+		for(int i: a)
+			System.out.print(i +" ");
+		System.out.println("");
+	}
 
 	private void merge(int[] a, int aux[], int lo, int mid, int hi){
 		if(lo >= hi)
@@ -32,12 +54,5 @@ public class Mergesort{
 		sort(a, aux, 0, a.length-1);
 	}
 
-	public static void main(String[] args){
-		Mergesort mysort = new Mergesort();
-		int[] a = {3,2,4,1,5,7,6,8,10,9};
-		mysort.sort(a);
-		for(int i: a)
-			System.out.print(i);
-		System.out.println("");
-	}
+
 }
